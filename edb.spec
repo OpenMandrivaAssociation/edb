@@ -1,8 +1,8 @@
 %define	name	edb
 %define	version 1.0.5.007
-%define release %mkrel 3
+%define release %mkrel 4
 
-%define major 	1
+%define major 1
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} %major -d
 
@@ -26,6 +26,7 @@ This package is part of the Enlightenment DR17 desktop shell.
 %package -n %libname
 Summary: Libraries for the %{name} package
 Group: System/Libraries
+Provides: %{name}-devel = %{version}-%{release}
 
 %description -n %libname
 Libraries for %{name}
@@ -35,6 +36,7 @@ Summary: Headers and development libraries from %{name}
 Group: Development/Other
 Requires: %libname = %{version}
 Provides: lib%{name}-devel = %{version}-%{release}
+Provides: %{libname}-devel = %{version}-%{release}
 Provides: %name-devel = %{version}-%{release}
 
 %description -n %libnamedev
