@@ -53,7 +53,7 @@ Provides: %name-devel = %{version}-%{release}
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall
-%multiarch_binaries %buildroot/%_bindir/%name-config
+#%multiarch_binaries %buildroot/%_bindir/%name-config
 
 %post -n %libname -p /sbin/ldconfig
 %postun -n %libname -p /sbin/ldconfig
@@ -76,5 +76,5 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/libedb.so
 %_libdir/libedb.*a
 %{_includedir}/Edb.h
-%multiarch %{multiarch_bindir}/edb-config
+#%multiarch %{multiarch_bindir}/edb-config
 %{_bindir}/edb-config
