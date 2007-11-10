@@ -1,6 +1,6 @@
 %define	name	edb
 %define version 1.0.5.008
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define major 1
 %define libname %mklibname %{name} %major
@@ -15,7 +15,7 @@ Group: 		Graphical desktop/Enlightenment
 URL: 		http://get-e.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	ncurses-devel gtk-devel zlib-devel
+BuildRequires:	ncurses-devel zlib-devel
 BuildRequires:	multiarch-utils
 Provides:	%name = %version-%release
 
@@ -47,7 +47,7 @@ Provides: %name-devel = %{version}-%{release}
 %setup -q
 
 %build
-%configure2_5x
+%configure2_5x --disable-test --disable-gtk
 %make
 
 %install
