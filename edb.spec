@@ -1,10 +1,10 @@
 %define	name	edb
-%define version 1.0.5.008
-%define release %mkrel 3
+%define version 1.0.5.042
+%define release %mkrel 1
 
 %define major 1
 %define libname %mklibname %{name} %major
-%define libnamedev %mklibname %{name} %major -d
+%define libnamedev %mklibname %{name} -d
 
 Summary: 	Enlightenment database access library
 Name: 		%{name}
@@ -12,12 +12,10 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
-URL: 		http://get-e.org/
+URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ncurses-devel zlib-devel
-BuildRequires:	multiarch-utils
-Provides:	%name = %version-%release
 
 %description
 Edb is a simple, clean high-level db access/storage library.
@@ -27,10 +25,9 @@ This package is part of the Enlightenment DR17 desktop shell.
 %package -n %libname
 Summary: Libraries for the %{name} package
 Group: System/Libraries
-Provides: %{libname} = %{version}-%{release}
 
 %description -n %libname
-Libraries for %{name}
+Libraries for %{name}.
 
 %package -n %libnamedev
 Summary: Headers and development libraries from %{name}
@@ -53,8 +50,6 @@ Provides: %name-devel = %{version}-%{release}
 %install
 rm -rf $RPM_BUILD_ROOT
 %makeinstall
-cp -v $RPM_BUILD_DIR/%name-%version/%name-config %buildroot/%_bindir/
-%multiarch_binaries %buildroot/%_bindir/%name-config
 
 %post -n %libname -p /sbin/ldconfig
 %postun -n %libname -p /sbin/ldconfig
@@ -77,5 +72,3 @@ rm -rf $RPM_BUILD_ROOT
 %_libdir/libedb.so
 %_libdir/libedb.*a
 %{_includedir}/Edb.h
-%multiarch %{multiarch_bindir}/edb-config
-%{_bindir}/edb-config
