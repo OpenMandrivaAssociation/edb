@@ -1,6 +1,6 @@
 %define	name	edb
 %define version 1.0.5.042
-%define release %mkrel 3
+%define release %mkrel 4
 
 %define major 1
 %define libname %mklibname %{name} %major
