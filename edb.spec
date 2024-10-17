@@ -12,7 +12,7 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
-URL: 		http://www.enlightenment.org/
+URL: 		https://www.enlightenment.org/
 Source0: 	http://download.enlightenment.org/snapshots/LATEST/%{name}-%{version}.tar.bz2
 BuildRequires:	ncurses-devel zlib-devel
 
