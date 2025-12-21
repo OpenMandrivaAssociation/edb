@@ -14,6 +14,11 @@ License: 	BSD
 Group: 		Graphical desktop/Enlightenment
 URL: 		https://www.enlightenment.org/
 Source0: 	http://download.enlightenment.org/snapshots/LATEST/%{name}-%{version}.tar.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	ncurses-devel zlib-devel
 
 %description
